@@ -2,9 +2,10 @@
 # get Endpoint Groups
 import requests
 #
-usr = "admin"
-pwd = "Ci5coAdmin"
+usr = "ers"
+pwd = "ersM0"
 ise = "ise.secure-x.local"
+headers = {"Accept" : "application/vnd.com.cisco.ise.identity.internaluser.1.0+xml"}
 
 url= "https://%s:9060/ers/config.endpoint" % ise
 
