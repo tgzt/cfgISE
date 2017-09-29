@@ -5,7 +5,7 @@ import requests
 usr = "ers"
 pwd = "ersM0"
 ise = "ise.secure-x.local"
-headers = {"Content-Type" : "application/vnd.com.cisco.ise.identity.internaluser.1.0+xml"}
+headers = {"Accept" : "application/vnd.com.cisco.ise.identity.internaluser.1.0+xml"}
 
 url= "https://%s:9060/ers/config/internaluser/versioninfo" % ise
 
