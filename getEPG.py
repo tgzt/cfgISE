@@ -1,14 +1,15 @@
 #! /usr/bin/env python2.7
 # get Endpoint Groups
+import requests
 #
 usr = "admin"
 pwd = "Ci5coAdmin"
 ise = "ise.secure-x.local"
 
-url= "https://%s:%s@ise-secure-x.local:9060/ers/config.endpoint" % (usr,pwd,ise)
+url= "https://%s:9060/ers/config.endpoint" % ise
 
-r = requests.get(url,auth=(usr,pwd))
+r = requests.get(url,verify=False,auth=(usr,pwd))
 #
-print r.status_code
-print r.headers
-print r.content
+print "CODE:",r.status_code
+print "HEADERS:",r.headers
+print "CONTENT:",r.content
