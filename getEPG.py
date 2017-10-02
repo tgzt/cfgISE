@@ -1,5 +1,6 @@
 # get Endpoint Groups
 import requests
+import json
 #
 usr = "ers"
 pwd = "ersM0"
@@ -8,8 +9,9 @@ headers = {"Accept" : "application/vnd.com.cisco.ise.identity.endpointgroup.1.0+
 
 url= "https://%s:9060/ers/config/endpointgroup" % ise
 
-r = requests.get(url,verify=False,auth=(usr,pwd))
+r = requests.get(url,verify=False,auth=(usr,pwd),headers=headers)
 #
 print "CODE:",r.status_code
 print "HEADERS:",r.headers
 print "CONTENT:",r.content
+print r.content.result.json()
