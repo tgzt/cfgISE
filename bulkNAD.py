@@ -1,5 +1,6 @@
 import requests
 import xml.etree.ElementTree as ET
+import json
 
 usr = "ers"
 pwd = "ersM0"
@@ -19,7 +20,8 @@ headers = {
     'cache-control': "no-cache"
 }
 response = requests.request("PUT", url, data=payload, headers=headers, auth=(usr,pwd), verify=False)
-
+print response
+print response.json()
 #Response manipulation
 responselocation = response.headers['location']
 bulkstatusid = responselocation.split("submit/",1)[1]
